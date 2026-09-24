@@ -69,7 +69,7 @@ public abstract class AbstractContainerMenuMixin implements HandlerWithContext {
         if (!player.level().isClientSide() && pos != null) {
             for (var pair : changedStacks.keySet()) {
                 ItemStack stack = new ItemStack(BuiltInRegistries.ITEM.wrapAsHolder(pair.getItem()), 1);
-                stack.setTag(pair.getChanges());
+                stack.setTag(pair.getChanges() == null ? null : pair.getChanges().copy());
                 if (stack.isEmpty()) {
                     continue;
                 }

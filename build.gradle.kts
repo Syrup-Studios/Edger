@@ -14,7 +14,7 @@ val modVersion: String by project
 val mavenGroup: String by project
 
 base.archivesName.set(modId)
-version = "$modVersion${getVersionMetadata()}"
+version = modVersion
 group = mavenGroup
 
 sourceSets {
@@ -155,23 +155,6 @@ gitHooks {
     setHooks(
         mapOf("pre-commit" to "detekt")
     )
-}
-
-fun getVersionMetadata(): String {
-    val buildId = System.getenv("GITHUB_RUN_NUMBER")
-    val workflow = System.getenv("GITHUB_WORKFLOW")
-
-    if (workflow == "Release") {
-        return ""
-    }
-
-    // CI builds only
-    if (buildId != null) {
-        return "+build.$buildId"
-    }
-
-    // No tracking information could be found about the build
-    return "+local"
 }
 
 afterEvaluate {
