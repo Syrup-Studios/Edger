@@ -29,6 +29,8 @@ The path is relative to the server's root directory. If the path is left out, th
 
 `logSQL` [Default: false] will log all SQL queries to the console. This is useful for debugging, but can be very spammy
 
+`updateSchema` [Default: false] adds the missing time index to existing databases at startup. This can be slow on large databases. Set it to `true` for one restart, then set it back to `false` after the index is created.
+
 ### Search settings
 
 Found under `[search]`
@@ -76,6 +78,8 @@ blocks = ["minecraft:air", "minecraft:dirt"]
 queueTimeoutMin = 5
 # The amount of time between checking if the queue is empty when the server stops
 queueCheckDelaySec = 10
+# Add the time index to existing databases at startup. This can be slow on large databases
+updateSchema = false
 
 [search]
 # Number of actions to show per page

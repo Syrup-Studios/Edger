@@ -11,6 +11,8 @@ batchSize = 1000
 batchDelay = 10
 # The location of the database file. Defaults to the world folder if not specified
 #location = "./custom-dir"
+# Add the time index to existing databases at startup. This can be slow on large databases
+updateSchema = false
 
 [search]
 # Number of actions to show per page

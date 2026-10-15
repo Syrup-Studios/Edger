@@ -58,7 +58,7 @@ object Tables {
 
     object Actions : IntIdTable("actions") {
         val actionResourceLocation = reference("action_id", ActionResourceLocations.id).index()
-        val timestamp = timestamp("time")
+        val timestamp = timestamp("time").index("actions_time")
         val x = integer("x")
         val y = integer("y")
         val z = integer("z")

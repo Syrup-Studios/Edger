@@ -36,6 +36,8 @@ Found under `[database]`
 
 `queueTimeoutSec` [Default: 5] is the maximum amount of time to wait for the queue to fill before writing
 
+`updateSchema` [Default: false] adds the missing time index to existing databases at startup. This can be slow on large databases. Set it to `true` for one restart, then set it back to `false` after the index is created.
+
 #### Filters
 
 These allow you to control what is and is not logged

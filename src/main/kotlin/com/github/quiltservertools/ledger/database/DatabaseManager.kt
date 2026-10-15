@@ -121,6 +121,13 @@ object DatabaseManager {
             Tables.Sources,
             Tables.Worlds,
         )
+        if (config[DatabaseSpec.updateSchema]) {
+            try {
+                exec("CREATE INDEX IF NOT EXISTS actions_time ON actions(time)")
+            } catch (e: java.sql.SQLException) {
+                logWarn("Could not create actions_time index: ${e.message}")
+            }
+        }
         logInfo("Tables created")
     }
 
