@@ -1,10 +1,10 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-    alias(libs.plugins.kotlin)
-    alias(libs.plugins.loom)
-    alias(libs.plugins.detekt)
-    alias(libs.plugins.git.hooks)
+    id("org.jetbrains.kotlin.jvm") version "2.2.0"
+    id("fabric-loom") version "1.14.+"
+    id("io.gitlab.arturbosch.detekt") version "1.23.8"
+    id("com.github.jakemarsden.git-hooks") version "0.0.2"
     `maven-publish`
 }
 
@@ -25,12 +25,13 @@ sourceSets {
 }
 
 loom {
+    fabricModJsonPath = rootProject.file("src/main/resources/fabric.mod.json")
     //serverOnlyMinecraftJar()
 
     runs {
         create("testmodClient") {
             client()
-            ideConfigGenerated(project.rootProject == project)
+            ideConfigGenerated(true)
             name("Networking Testmod (Client)")
             source(sourceSets.getByName("testmod"))
         }
@@ -56,62 +57,59 @@ val includeImplementation: Configuration by configurations.creating {
 }
 
 dependencies {
-    // To change the versions see the libs.versions.toml
+    // Dependency versions are in stonecutter.properties.yaml.
 
     // Fabric
-    minecraft(libs.minecraft)
+    minecraft("com.mojang:minecraft:${stonecutter.current.version}")
     mappings(loom.officialMojangMappings())
-    modImplementation(libs.fabric.loader)
+    modImplementation("net.fabricmc:fabric-loader:${property("deps.fabric_loader")}")
 
     // Fabric API
-    modImplementation(libs.fabric.api)
+    modImplementation("net.fabricmc.fabric-api:fabric-api:${property("deps.fabric_api")}")
 
     // Permissions
-    modImplementationAndInclude(libs.fabric.permissions)
+    modImplementationAndInclude("me.lucko:fabric-permissions-api:${property("deps.fabric_permissions")}")
 
     // Translations
-    modImplementationAndInclude(libs.translations)
+    modImplementationAndInclude("xyz.nucleoid:server-translations-api:${property("deps.translations")}")
 
     // Kotlin
-    modImplementation(libs.fabric.kotlin)
+    modImplementation("net.fabricmc:fabric-language-kotlin:${property("deps.fabric_kotlin")}")
 
     // Database
-    includeImplementation(libs.exposed.core)
-    includeImplementation(libs.exposed.dao)
-    includeImplementation(libs.exposed.java.time)
-    includeImplementation(libs.exposed.jdbc)
-//    includeImplementation(libs.exposed.migration)
-    includeImplementation(libs.sqlite.jdbc)
+    includeImplementation("org.jetbrains.exposed:exposed-core:${property("deps.exposed")}")
+    includeImplementation("org.jetbrains.exposed:exposed-dao:${property("deps.exposed")}")
+    includeImplementation("org.jetbrains.exposed:exposed-java-time:${property("deps.exposed")}")
+    includeImplementation("org.jetbrains.exposed:exposed-jdbc:${property("deps.exposed")}")
+    includeImplementation("org.xerial:sqlite-jdbc:${property("deps.sqlite_jdbc")}")
 
     // Config
-    includeImplementation(libs.konf.core)
-    includeImplementation(libs.konf.toml)
+    includeImplementation("com.uchuhimo:konf-core:${property("deps.konf")}")
+    includeImplementation("com.uchuhimo:konf-toml:${property("deps.konf")}")
 
-    detektPlugins(libs.detekt.formatting)
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:${property("deps.detekt")}")
 }
 
 tasks {
     processResources {
-        inputs.property("id", modId)
-        inputs.property("name", modName)
-        inputs.property("version", version)
+        val values = mapOf(
+            "id" to modId,
+            "name" to modName,
+            "version" to version,
+            "fabricApi" to project.property("deps.fabric_api"),
+            "fabricLoader" to project.property("deps.fabric_loader"),
+            "fabricKotlin" to project.property("deps.fabric_kotlin"),
+            "minecraft" to stonecutter.current.version,
+        )
 
+        inputs.properties(values)
         filesMatching("fabric.mod.json") {
-            expand(
-                mapOf(
-                    "id" to modId,
-                    "version" to version,
-                    "name" to modName,
-                    "fabricApi" to libs.versions.fabric.api.get(),
-                    "fabricKotlin" to libs.versions.fabric.kotlin.get(),
-                    "minecraft" to libs.versions.minecraft.get(),
-                )
-            )
+            expand(values)
         }
     }
 
     jar {
-        from("LICENSE")
+        from(rootProject.file("LICENSE.md"))
     }
 }
 

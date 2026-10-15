@@ -4,14 +4,22 @@ pluginManagement {
         maven(url = "https://maven.fabricmc.net/") {
             name = "Fabric"
         }
+        maven(url = "https://maven.kikugie.dev/releases") {
+            name = "KikuGie"
+        }
         gradlePluginPortal()
     }
 }
 
-dependencyResolutionManagement {
-    versionCatalogs {
-        create("libs") {
-            from(files("libs.versions.toml"))
-        }
+plugins {
+    id("dev.kikugie.stonecutter") version "0.9.8"
+}
+
+stonecutter {
+    create(rootProject) {
+        version("1.20.1-fabric", "1.20.1").buildscript("build.fabric.gradle.kts")
+        vcsVersion = "1.20.1-fabric"
     }
 }
+
+rootProject.name = "Ledger"

@@ -8,6 +8,10 @@ A world change logging tool for the Fabric modloader.
 
 Ledger can be found on Discord at https://discord.gg/GtwDTTr3pe
 
+### Build
+
+Use JDK 21 to assemble the Stonecutter Fabric 1.20.1 target with `./gradlew :1.20.1-fabric:assemble`. Find the jar in `versions/1.20.1-fabric/build/libs`. Target dependency versions are in `stonecutter.properties.yaml`.
+
 ### Install
 
 Put Ledger in your mods folder along with Fabric API and fabric-language-kotlin. When you launch your server, the config file will be created automatically.
