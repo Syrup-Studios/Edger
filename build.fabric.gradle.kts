@@ -4,17 +4,21 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     id("org.jetbrains.kotlin.jvm")
     id("fabric-loom")
-    id("io.gitlab.arturbosch.detekt")
-    id("com.github.jakemarsden.git-hooks")
+    id("me.modmuss50.mod-publish-plugin")
     `maven-publish`
 }
 
 val modId = property("mod.id").toString()
 val javaVersion = property("java.version").toString().toInt()
+val uploadVersion = "${property("mod.version")}+${stonecutter.current.version}-fabric"
 
 base.archivesName.set(modId)
 version = property("mod.version").toString()
 group = property("mod.group").toString()
+
+tasks.withType<AbstractArchiveTask>().configureEach {
+    archiveVersion.set(uploadVersion)
+}
 
 sourceSets {
     create("testmod") {
@@ -87,8 +91,6 @@ dependencies {
     // Config
     includeImplementation("com.uchuhimo:konf-core:${property("deps.konf")}")
     includeImplementation("com.uchuhimo:konf-toml:${property("deps.konf")}")
-
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:${property("plugins.detekt")}")
 }
 
 tasks {
@@ -109,7 +111,7 @@ tasks {
             "fabricApi" to jsonStringContent(">=${project.property("deps.fabric_api")}"),
             "fabricLoader" to jsonStringContent(">=${project.property("deps.fabric_loader")}"),
             "fabricKotlin" to jsonStringContent(">=${project.property("deps.fabric_kotlin")}"),
-            "minecraft" to jsonStringContent(stonecutter.current.version),
+            "minecraft" to jsonStringContent(project.property("mod.fabric_mc_range")),
         )
 
         inputs.properties(values)
@@ -119,6 +121,16 @@ tasks {
 
 tasks.withType<Jar>().configureEach {
     from(rootProject.files("NOTICE", "LICENSE.md", "GPL-3.0.txt"))
+}
+
+tasks.register<Copy>("buildAndCollect") {
+    group = "build"
+    from(
+        tasks.named<net.fabricmc.loom.task.RemapJarTask>("remapJar").flatMap { it.archiveFile },
+        tasks.named<net.fabricmc.loom.task.RemapSourcesJarTask>("remapSourcesJar").flatMap { it.archiveFile },
+    )
+    into(rootProject.layout.buildDirectory.dir("libs/${project.property("mod.version")}"))
+    dependsOn("assemble")
 }
 
 java {
@@ -139,29 +151,87 @@ publishing {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
             artifactId = modId
+            version = uploadVersion
         }
     }
 
     // select the repositories you want to publish to
     repositories {
-        // mavenLocal()
+        maven {
+            name = project.property("publish.maven_name").toString()
+            url = uri(project.property("publish.maven_url").toString())
+            credentials(PasswordCredentials::class)
+        }
     }
 }
 
-detekt {
-    buildUponDefaultConfig = true
-    autoCorrect = true
-    config.setFrom(rootProject.files("detekt.yml"))
+val modrinthToken = providers.gradleProperty("publish.modrinth_token")
+    .orElse(providers.gradleProperty("MODRINTH_TOKEN"))
+    .orElse(providers.environmentVariable("MODRINTH_TOKEN"))
+val curseForgeToken = providers.gradleProperty("publish.curseforge_token")
+    .orElse(providers.gradleProperty("CURSEFORGE_TOKEN"))
+    .orElse(providers.environmentVariable("CURSEFORGE_TOKEN"))
+val modrinthId = property("publish.modrinth").toString().trim()
+val curseForgeId = property("publish.curseforge").toString().trim()
+val publishDryRun = providers.gradleProperty("publish.dry_run").map {
+    when (it) {
+        "true" -> true
+        "false" -> false
+        else -> throw GradleException("publish.dry_run must be true or false")
+    }
+}.orElse(!modrinthToken.isPresent || !curseForgeToken.isPresent)
+val compatibleVersions = stonecutter.properties.rawOrNull("mod.mc_releases")
+    ?.asList().orEmpty().map { it.toString() }
+
+publishMods {
+    file = tasks.named<net.fabricmc.loom.task.RemapJarTask>("remapJar").flatMap { it.archiveFile }
+    dryRun.set(publishDryRun)
+    version = uploadVersion
+    displayName = "${property("mod.name")} ${project.version} - Fabric ${stonecutter.current.version}"
+    changelog = providers.fileContents(rootProject.layout.projectDirectory.file(property("publish.changelog_file").toString())).asText
+    type = when (property("publish.release_type").toString().lowercase()) {
+        "stable" -> STABLE
+        "beta" -> BETA
+        "alpha" -> ALPHA
+        else -> throw GradleException("publish.release_type must be stable, beta, or alpha")
+    }
+    modLoaders.add("fabric")
+
+    modrinth {
+        projectId = modrinthId.ifBlank { "00000000" }
+        accessToken = modrinthToken
+        compatibleVersions.forEach { minecraftVersions.add(it) }
+        environment = SERVER_ONLY
+        requires("fabric-api")
+        requires("fabric-language-kotlin")
+    }
+    curseforge {
+        projectId = curseForgeId.ifBlank { "0" }
+        accessToken = curseForgeToken
+        compatibleVersions.forEach { minecraftVersions.add(it) }
+        client = false
+        server = true
+        requires("fabric-api")
+        requires("fabric-language-kotlin")
+    }
 }
 
-tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
-    jvmTarget = javaVersion.toString()
-}
-
-gitHooks {
-    setHooks(
-        mapOf("pre-commit" to "detekt")
-    )
+tasks.matching { it.name == "publishModrinth" || it.name == "publishCurseforge" }.configureEach {
+    doFirst {
+        if (!publishDryRun.get()) {
+            if (name == "publishModrinth") {
+                check(modrinthId.isNotBlank()) { "Set publish.modrinth in stonecutter.properties.yaml before live publishing" }
+                check(modrinthToken.isPresent && modrinthToken.get().isNotBlank()) {
+                    "Set MODRINTH_TOKEN or publish.modrinth_token before live publishing"
+                }
+            } else {
+                check(curseForgeId.isNotBlank()) { "Set publish.curseforge in stonecutter.properties.yaml before live publishing" }
+                check(curseForgeToken.isPresent && curseForgeToken.get().isNotBlank()) {
+                    "Set CURSEFORGE_TOKEN or publish.curseforge_token before live publishing"
+                }
+            }
+        }
+    }
 }
 
 afterEvaluate {

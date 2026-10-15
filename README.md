@@ -10,7 +10,31 @@ The [upstream Ledger community](https://discord.gg/GtwDTTr3pe) is on Discord.
 
 ### Build
 
-Use the Java version set by `java.version` in `stonecutter.properties.yaml` to assemble the Stonecutter Fabric target with `./gradlew :1.20.1-fabric:assemble`. Set the Minecraft target with `minecraft.version`. Find the jar in `versions/1.20.1-fabric/build/libs`. Mod metadata, plugin versions, and dependency versions are also in that file.
+Use the Java version set by `java.version` in `stonecutter.properties.yaml` to assemble the Stonecutter Fabric target with `./gradlew :1.20.1-fabric:assemble`. Set the Minecraft target with `minecraft.version`. The installable jar is named `edger-<version>+1.20.1-fabric.jar` in `versions/1.20.1-fabric/build/libs`. To collect it and the sources jar in the root build folder, run:
+
+```sh
+./gradlew :1.20.1-fabric:buildAndCollect
+```
+
+Collected jars are in `build/libs/<mod version>/`. Mod metadata, plugin versions, and dependency versions are also in `stonecutter.properties.yaml`.
+
+### Publish
+
+`publishMods` prepares the remapped Fabric jar for Modrinth and CurseForge. It runs as a dry run when either platform token is missing:
+
+```sh
+./gradlew :1.20.1-fabric:publishMods
+```
+
+Set the Edger project IDs in `publish.modrinth` and `publish.curseforge` in `stonecutter.properties.yaml` before a live upload. Set `MODRINTH_TOKEN` and `CURSEFORGE_TOKEN` as environment variables, or use the Gradle properties `publish.modrinth_token` and `publish.curseforge_token`. With both tokens set, `publishMods` uploads by default. Add `-Ppublish.dry_run=true` to force a dry run. Never commit tokens.
+
+To upload to one platform with only its token, run its task with `-Ppublish.dry_run=false`, for example `./gradlew :1.20.1-fabric:publishModrinth -Ppublish.dry_run=false`. The task checks that platform's project ID and token. To upload both, set both tokens and run `publishMods`.
+
+Release notes come from the file named by `publish.changelog_file` in `stonecutter.properties.yaml`.
+
+### Maven
+
+Run `./gradlew :1.20.1-fabric:publish` to publish the Maven artifact to Syrup Studios. Configure Gradle properties `syrupStudiosUsername` and `syrupStudiosPassword`. For environment variables, use `ORG_GRADLE_PROJECT_syrupStudiosUsername` and `ORG_GRADLE_PROJECT_syrupStudiosPassword`. Never commit credentials.
 
 ### Install
 

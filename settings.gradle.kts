@@ -20,8 +20,7 @@ stonecutter.properties(file("stonecutter.properties.yaml"))
 val pluginDefaults = settings.getPluginManagement().getPlugins()
 pluginDefaults.id("org.jetbrains.kotlin.jvm").version(stonecutter.properties.get<String>("plugins.kotlin"))
 pluginDefaults.id("fabric-loom").version(stonecutter.properties.get<String>("plugins.fabric_loom"))
-pluginDefaults.id("io.gitlab.arturbosch.detekt").version(stonecutter.properties.get<String>("plugins.detekt"))
-pluginDefaults.id("com.github.jakemarsden.git-hooks").version(stonecutter.properties.get<String>("plugins.git_hooks"))
+pluginDefaults.id("me.modmuss50.mod-publish-plugin").version(stonecutter.properties.get<String>("plugins.mod_publish"))
 
 stonecutter {
     create(rootProject) {
