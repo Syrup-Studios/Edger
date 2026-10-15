@@ -1,7 +1,7 @@
 mod:
   id: edger
   name: Edger
-  version: 0.1.0
+  version: 0.2.0
   group: net.syrupstudios
   description: Logs world events and allows for them to be rolled back
   author: Syrup Studios

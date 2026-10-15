@@ -110,7 +110,7 @@ object Ledger : DedicatedServerModInitializer, CoroutineScope {
         runBlocking {
             try {
                 withTimeout(config[DatabaseSpec.queueTimeoutMin].minutes) {
-                    Ledger.launch {
+                    val progressLogger = launch {
                         while (ActionQueueService.size > 0) {
                             logInfo(
                                 "Database is still busy. If you exit now data WILL be lost. " +
@@ -120,8 +120,12 @@ object Ledger : DedicatedServerModInitializer, CoroutineScope {
                             delay(config[DatabaseSpec.queueCheckDelaySec].seconds)
                         }
                     }
-                    ActionQueueService.drainAll()
-                    logInfo("Successfully drained database queue")
+                    try {
+                        ActionQueueService.drainAll()
+                        logInfo("Successfully drained database queue")
+                    } finally {
+                        progressLogger.cancel()
+                    }
                 }
             } catch (e: TimeoutCancellationException) {
                 logWarn(
