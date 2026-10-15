@@ -13,11 +13,7 @@
     "text.edger.status.queue.busy": "Зайнято",
     "text.edger.status.queue.empty": "Порожньо",
     "text.edger.status.version": "Версія: %s",
-    "text.edger.status.discord": "Discord: %s",
-    "text.edger.status.discord.join": "Натисніть, щоб приєднатися",
     "text.edger.status.db_type": "Тип бази даних: %s",
-    "text.edger.status.wiki": "Керівництво: %s",
-    "text.edger.status.wiki.view": "Натисніть, щоб переглянути",
 
     "text.edger.preview.start": "Початок попереднього перегляду",
 

@@ -1,14 +1,14 @@
 mod:
   id: edger
   name: Edger
-  version: 1.3.18-salad
+  version: 0.1.0
   group: net.syrupstudios
   description: Logs world events and allows for them to be rolled back
-  author: Potatoboy9999
+  author: Syrup Studios
   license: LGPL
-  homepage: https://quiltservertools.github.io/Ledger/latest/
-  sources: https://github.com/QuiltServerTools/Ledger
-  issues: https://github.com/QuiltServerTools/Ledger/issues
+  homepage: https://github.com/Syrup-Studios/Edger
+  sources: https://github.com/Syrup-Studios/Edger
+  issues: https://github.com/Syrup-Studios/Edger/issues
   entrypoint: net.syrupstudios.edger.Ledger::INSTANCE
 java:
   version: 21

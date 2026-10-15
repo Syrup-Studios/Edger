@@ -9,13 +9,11 @@ import net.syrupstudios.edger.utility.Context
 import net.syrupstudios.edger.utility.LiteralNode
 import net.syrupstudios.edger.utility.TextColorPallet
 import net.syrupstudios.edger.utility.literal
-import net.syrupstudios.edger.utility.translate
 import kotlinx.coroutines.launch
 import me.lucko.fabric.api.permissions.v0.Permissions
 import net.fabricmc.loader.api.FabricLoader
 import net.fabricmc.loader.api.SemanticVersion
 import net.minecraft.commands.Commands
-import net.minecraft.network.chat.ClickEvent
 import net.minecraft.network.chat.Component
 
 object StatusCommand : BuildableCommand {
@@ -51,36 +49,6 @@ object StatusCommand : BuildableCommand {
                     "text.edger.status.db_type",
                     DatabaseManager.databaseType.literal()
                         .setStyle(TextColorPallet.secondaryVariant)
-                ).setStyle(TextColorPallet.secondary)
-            )
-            source.sendSystemMessage(
-                Component.translatable(
-                    "text.edger.status.discord",
-                    "text.edger.status.discord.join".translate()
-                        .setStyle(TextColorPallet.secondaryVariant)
-                        .withStyle {
-                            it.withClickEvent(
-                                ClickEvent(
-                                    ClickEvent.Action.OPEN_URL,
-                                    "https://discord.gg/FpRNYrQaGP"
-                                )
-                            )
-                        }
-                ).setStyle(TextColorPallet.secondary)
-            )
-            source.sendSystemMessage(
-                Component.translatable(
-                    "text.edger.status.wiki",
-                    "text.edger.status.wiki.view".translate()
-                        .setStyle(TextColorPallet.secondaryVariant)
-                        .withStyle {
-                            it.withClickEvent(
-                                ClickEvent(
-                                    ClickEvent.Action.OPEN_URL,
-                                    "https://www.quiltservertools.net/Ledger/${getVersion().friendlyString}/"
-                                )
-                            )
-                        }
                 ).setStyle(TextColorPallet.secondary)
             )
         }

@@ -13,11 +13,7 @@
     "text.edger.status.queue.busy": "Zaniata",
     "text.edger.status.queue.empty": "Pusta",
     "text.edger.status.version": "Viersija: %s",
-    "text.edger.status.discord": "Discord: %s",
-    "text.edger.status.discord.join": "Nacisnicie, kab dalučycca",
     "text.edger.status.db_type": "Typ bazy dadzienych: %s",
-    "text.edger.status.wiki": "Kiraŭnictva: %s",
-    "text.edger.status.wiki.view": "Nacisnicie dlia prahliadu",
 
     "text.edger.preview.start": "Pačatak papiaredniaha prahliadu",
 

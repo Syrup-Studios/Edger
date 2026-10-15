@@ -1,12 +1,6 @@
-[![upstream Ledger Discord](https://img.shields.io/discord/764543203772334100?label=upstream%20Ledger%20Discord)](https://discord.gg/UxHnDWr)
-
-For the original Ledger guide, visit the [upstream wiki](https://quiltservertools.github.io/Ledger/latest/).
-
 ## Edger
 
 A world change logging tool for the Fabric modloader.
-
-The [upstream Ledger community](https://discord.gg/GtwDTTr3pe) is on Discord.
 
 ### Build
 

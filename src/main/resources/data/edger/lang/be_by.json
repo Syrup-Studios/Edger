@@ -13,11 +13,7 @@
     "text.edger.status.queue.busy": "Занята",
     "text.edger.status.queue.empty": "Пуста",
     "text.edger.status.version": "Версія: %s",
-    "text.edger.status.discord": "Discord: %s",
-    "text.edger.status.discord.join": "Націсніце, каб далучыцца",
     "text.edger.status.db_type": "Тып базы дадзеных: %s",
-    "text.edger.status.wiki": "Кіраўніцтва: %s",
-    "text.edger.status.wiki.view": "Націсніце для прагляду",
 
     "text.edger.preview.start": "Пачатак папярэдняга прагляду",
 

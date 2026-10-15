@@ -13,10 +13,6 @@
   "text.edger.status.queue.busy": "繁忙",
   "text.edger.status.queue.empty": "闲置",
   "text.edger.status.version": "版本: %s",
-  "text.edger.status.discord": "单击以加入 Ledger  discord 服务器",
-  "text.edger.status.discord.join": "单击以加入",
-  "text.edger.status.wiki": "Wiki: %s",
-  "text.edger.status.wiki.view": "单击跳转WIKI",
 
   "text.edger.preview.start": "功能预览",
 

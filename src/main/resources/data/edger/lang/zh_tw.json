@@ -13,11 +13,7 @@
   "text.edger.status.queue.busy": "忙碌",
   "text.edger.status.queue.empty": "空",
   "text.edger.status.version": "版本：%s",
-  "text.edger.status.discord": "Discord：%s",
-  "text.edger.status.discord.join": "按這裡加入",
   "text.edger.status.db_type": "資料庫類型：%s",
-  "text.edger.status.wiki": "wiki：%s",
-  "text.edger.status.wiki.view": "按這裡瀏覽 wiki",
 
   "text.edger.preview.start": "開始預覽",
 

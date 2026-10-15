@@ -13,11 +13,7 @@
     "text.edger.status.queue.busy": "Beschäftigt",
     "text.edger.status.queue.empty": "Leer",
     "text.edger.status.version": "Version: %s",
-    "text.edger.status.discord": "Discord: %s",
-    "text.edger.status.discord.join": "Zum Beitreten klicken",
     "text.edger.status.db_type": "Datenbank Typ: %s",
-    "text.edger.status.wiki": "Wiki: %s",
-    "text.edger.status.wiki.view": "Zum Öffnen klicken",
 
     "text.edger.preview.start": "Vorschau startet",
 

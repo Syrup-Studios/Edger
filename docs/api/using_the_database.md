@@ -49,7 +49,7 @@ object LedgerExamples {
 ## Java
 
 With Java, you can access our database with the API which can be obtained with `Ledger.getApi()`.
-You can see the API [here](https://github.com/QuiltServerTools/Ledger/blob/master/src/main/java/com/github/quiltservertools/ledger/api/LedgerApi.java).
+You can see the API [here](../../src/main/java/net/syrupstudios/edger/api/LedgerApi.java).
 
 ```java
 public class LedgerExamples {

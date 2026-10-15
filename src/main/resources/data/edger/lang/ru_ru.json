@@ -13,10 +13,6 @@
   "text.edger.status.queue.busy": "Занято",
   "text.edger.status.queue.empty": "Пусто",
   "text.edger.status.version": "Версия: %s",
-  "text.edger.status.discord": "Discord: %s",
-  "text.edger.status.discord.join": "Нажмите, чтобы присоединиться",
-  "text.edger.status.wiki": "Wiki: %s",
-  "text.edger.status.wiki.view": "Нажмите, чтобы просмотреть",
 
   "text.edger.preview.start": "Предварительный просмотр начинается",
 
