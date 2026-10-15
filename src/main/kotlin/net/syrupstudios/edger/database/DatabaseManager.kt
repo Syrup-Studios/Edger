@@ -495,7 +495,7 @@ object DatabaseManager {
             this[Tables.Actions.blockState] = action.objectState
             this[Tables.Actions.oldBlockState] = action.oldObjectState
             this[Tables.Actions.sourceName] = getOrCreateSourceId(action.sourceName)
-            this[Tables.Actions.sourcePlayer] = action.sourceProfile?.let { getOrCreatePlayerId(it.id) }
+            this[Tables.Actions.sourcePlayer] = action.sourceProfile?.let { getOrCreatePlayerId(it) }
             this[Tables.Actions.extraData] = action.extraData
         }
     }
@@ -609,8 +609,14 @@ object DatabaseManager {
         ].id.value.also { cache.put(obj!!, it) }
     }
 
-    private fun getOrCreatePlayerId(playerId: UUID): Int =
-        getOrCreateObjectId(playerId, cache.playerKeys, Tables.Player, Tables.Players, Tables.Players.playerId)
+    private fun getOrCreatePlayerId(profile: GameProfile): Int =
+        getPlayerId(profile.id) ?: Tables.Player.new {
+            playerId = profile.id
+            playerName = profile.name
+        }.id.value.also {
+            cache.playerKeys[profile.id] = it
+            cache.playernameKeys[profile.name] = it
+        }
 
     private fun getOrCreateSourceId(source: String): Int =
         getOrCreateObjectId(source, cache.sourceKeys, Tables.Source, Tables.Sources, Tables.Sources.name)
