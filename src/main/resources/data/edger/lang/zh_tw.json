@@ -1,0 +1,66 @@
+{
+  "text.edger.header.search.pos": "--- 在 %s 搜尋記錄---",
+  "text.edger.header.search": "------ 搜尋記錄 ------",
+  "text.edger.header.status": "------ Edger ------",
+
+  "text.edger.footer.search": "------- %s [第 %s 頁/共 %s 頁] %s -------",
+  "text.edger.footer.page_forward": ">>",
+  "text.edger.footer.page_forward.hover": "下一頁",
+  "text.edger.footer.page_backward": "<<",
+  "text.edger.footer.page_backward.hover": "上一頁",
+
+  "text.edger.status.queue": "資料庫佇列：%s ",
+  "text.edger.status.queue.busy": "忙碌",
+  "text.edger.status.queue.empty": "空",
+  "text.edger.status.version": "版本：%s",
+  "text.edger.status.discord": "Discord：%s",
+  "text.edger.status.discord.join": "按這裡加入",
+  "text.edger.status.db_type": "資料庫類型：%s",
+  "text.edger.status.wiki": "wiki：%s",
+  "text.edger.status.wiki.view": "按這裡瀏覽 wiki",
+
+  "text.edger.preview.start": "開始預覽",
+
+  "text.edger.action_message": "%1$s %2$s %3$s %4$s %5$s",
+  "text.edger.action_message.time_diff": "%s 前",
+  "text.edger.action_message.location.hover": "按這裡傳送",
+  "text.edger.action_message.with": "和",
+
+  "text.edger.rollback.start": "正在復原 %s 項動作",
+  "text.edger.rollback.finish": "復原完成",
+  "text.edger.rollback.fail": "復原失敗 %s ×%s",
+
+  "text.edger.restore.start": "正在還原 %s 項動作",
+  "text.edger.restore.finish": "還原完成",
+  "text.edger.restore.fail": "還原失敗 %s ×%s",
+
+  "text.edger.inspect.toggle": "檢查模式：%s",
+  "text.edger.inspect.on": "已啟用",
+  "text.edger.inspect.off": "已停用",
+
+  "text.edger.database.busy": "資料庫目前忙碌中，這可能需要一點時間",
+
+  "error.edger.no_cached_params": "沒有快取搜尋，請先嘗試進行搜尋",
+  "error.edger.command.no_results": "該搜尋沒有結果",
+  "error.edger.no_more_pages": "沒有更多頁面",
+  "error.edger.unknown_param": "無效引數 %s",
+  "error.edger.no_preview": "沒有目前的預覽",
+
+  "text.edger.action.block-place": "放置",
+  "text.edger.action.block-break": "破壞",
+  "text.edger.action.block-change": "改變",
+  "text.edger.action.item-insert": "放入",
+  "text.edger.action.item-remove": "拿取",
+  "text.edger.action.item-pick-up": "撿起",
+  "text.edger.action.item-drop": "掉落",
+  "text.edger.action.entity-kill": "殺死",
+  "text.edger.action.entity-change": "改變",
+
+  "text.edger.network.protocols_mismatched": "協議版本不符：用戶端版本為 Ledger 協定版本 %d，伺服器版本為 %d",
+  "text.edger.network.no_mod_info": "無法確定您用戶端模組的模組資訊",
+
+  "text.edger.purge.starting": "------ 開始清除 ------",
+  "text.edger.purge.complete": "------ 完成清除 ------",
+
+  "text.edger.player.result": "%1$s：第一次加入 %2$s。最後加入：%3$s"
+}

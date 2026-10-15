@@ -1,0 +1,78 @@
+{
+    "text.edger.header.search.pos": "--- Пошук журналаў на %s ---",
+    "text.edger.header.search": "------ Пошук журналаў ------",
+    "text.edger.header.status": "------ Edger ------",
+
+    "text.edger.footer.search": "------- %s [Старонка %s з %s] %s -------",
+    "text.edger.footer.page_forward": ">>",
+    "text.edger.footer.page_forward.hover": "Наступная старонка",
+    "text.edger.footer.page_backward": "<<",
+    "text.edger.footer.page_backward.hover": "Мінулая старонка",
+
+    "text.edger.status.queue": "Чэрга базы дадзеных: %s",
+    "text.edger.status.queue.busy": "Занята",
+    "text.edger.status.queue.empty": "Пуста",
+    "text.edger.status.version": "Версія: %s",
+    "text.edger.status.discord": "Discord: %s",
+    "text.edger.status.discord.join": "Націсніце, каб далучыцца",
+    "text.edger.status.db_type": "Тып базы дадзеных: %s",
+    "text.edger.status.wiki": "Кіраўніцтва: %s",
+    "text.edger.status.wiki.view": "Націсніце для прагляду",
+
+    "text.edger.preview.start": "Пачатак папярэдняга прагляду",
+
+    "text.edger.action_message": "%1$s %2$s %3$s %4$s %5$s",
+    "text.edger.action_message.time_diff": "%s таму",
+    "text.edger.action_message.location.hover": "Націсніце, каб тэлепартавацца",
+    "text.edger.action_message.with": "з",
+
+    "text.edger.rollback.start": "Адкат %s дзеянняў",
+    "text.edger.rollback.finish": "Адкат завершаны",
+    "text.edger.rollback.fail": "Не ўдалося адкаціць %s x%s",
+
+    "text.edger.restore.start": "Аднаўленне %s дзеянняў",
+    "text.edger.restore.finish": "Аднаўленне завершана",
+    "text.edger.restore.fail": "Не ўдалося аднавіць %s x%s",
+
+    "text.edger.inspect.toggle": "Рэжым агляду: %s",
+    "text.edger.inspect.on": "Уключаны",
+    "text.edger.inspect.off": "Выключаны",
+
+    "text.edger.database.busy": "Базы дадзеных зараз занята. Гэта можа заняць некаторы час",
+
+    "error.edger.no_cached_params": "Няма кэшаванага пошуку. Паспрабуйце спачатку пашукаць",
+    "error.edger.command.no_results": "Няма рэзультатаў для гэтага пошуку",
+    "error.edger.no_more_pages": "Больш няма старонак",
+    "error.edger.unknown_param": "Невядомы параметр %s",
+    "error.edger.no_preview": "Няма цякучага папярэдняга прагляду",
+    "error.edger.unspecific.range": "Калі ласка, укажыце дыяпазон.",
+    "error.edger.unspecific.range_to_big": "Максімальны дыяпазон складае %s.",
+    "error.edger.unspecific.source_or_time": "Калі ласка, укажыце крыніцу або час (пасля).",
+
+    "text.edger.action.block-place": "паставіў",
+    "text.edger.action.block-break": "зламаў",
+    "text.edger.action.block-change": "змяніў",
+    "text.edger.action.item-insert": "паклаў",
+    "text.edger.action.item-remove": "узяў",
+    "text.edger.action.item-pick-up": "падабраў",
+    "text.edger.action.item-drop": "скінуў",
+    "text.edger.action.entity-kill": "забіў",
+    "text.edger.action.entity-change": "змяніў",
+
+    "text.edger.parameter.action.description": "Фільтраваць па тыпу выкананага дзеяння.",
+    "text.edger.parameter.after.description": "Фільтраваць па часе (пасля вызначанага часу).",
+    "text.edger.parameter.before.description": "Фільтраваць па часе (да вызначанага часу). Звычайна варта выкарыстоўваць пасля.",
+    "text.edger.parameter.object.description": "Фільтраваць па аб'ектах. Гэта можа быць блок, прадмет або сутнасць.",
+    "text.edger.parameter.range.description": "Фільтраваць па месцазнаходжанне (квадратны радыус вакол вашага месцазнаходжання).",
+    "text.edger.parameter.rolledback.description": "Фільтраваць па адкачаным стане.",
+    "text.edger.parameter.source.description": "Фільтраваць па крыніцы (імя гульца або крыніца з '@').",
+    "text.edger.parameter.world.description": "Фільтраваць па ўказаным свеце.",
+
+    "text.edger.network.protocols_mismatched": "Несумяшчальнасць версіі пратакола: версія пратакола мода Ledger %d, а версія кліента %d",
+    "text.edger.network.no_mod_info": "Немагчыма вызначыць інфармацыю пра мод для вашага кліента",
+
+    "text.edger.purge.starting": "------ Пачатак чысткі ------",
+    "text.edger.purge.complete": "------ Чыстка завершана ------",
+
+    "text.edger.player.result": "%1$s: Упершыню далучыўся %2$s. Апошні раз далучыўся: %3$s"
+}

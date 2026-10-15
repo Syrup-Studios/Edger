@@ -1,21 +1,20 @@
+import groovy.json.JsonOutput
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "2.2.0"
-    id("fabric-loom") version "1.14.+"
-    id("io.gitlab.arturbosch.detekt") version "1.23.8"
-    id("com.github.jakemarsden.git-hooks") version "0.0.2"
+    id("org.jetbrains.kotlin.jvm")
+    id("fabric-loom")
+    id("io.gitlab.arturbosch.detekt")
+    id("com.github.jakemarsden.git-hooks")
     `maven-publish`
 }
 
-val modId: String by project
-val modName: String by project
-val modVersion: String by project
-val mavenGroup: String by project
+val modId = property("mod.id").toString()
+val javaVersion = property("java.version").toString().toInt()
 
 base.archivesName.set(modId)
-version = modVersion
-group = mavenGroup
+version = property("mod.version").toString()
+group = property("mod.group").toString()
 
 sourceSets {
     create("testmod") {
@@ -42,6 +41,8 @@ fun DependencyHandlerScope.modImplementationAndInclude(dep: Any) {
     modImplementation(dep)
     include(dep)
 }
+
+fun jsonStringContent(value: Any?): String = JsonOutput.toJson(requireNotNull(value).toString()).let { it.substring(1, it.length - 1) }
 
 repositories {
     maven("https://maven.fabricmc.net/")
@@ -87,41 +88,48 @@ dependencies {
     includeImplementation("com.uchuhimo:konf-core:${property("deps.konf")}")
     includeImplementation("com.uchuhimo:konf-toml:${property("deps.konf")}")
 
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:${property("deps.detekt")}")
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:${property("plugins.detekt")}")
 }
 
 tasks {
     processResources {
         val values = mapOf(
-            "id" to modId,
-            "name" to modName,
-            "version" to version,
-            "fabricApi" to project.property("deps.fabric_api"),
-            "fabricLoader" to project.property("deps.fabric_loader"),
-            "fabricKotlin" to project.property("deps.fabric_kotlin"),
-            "minecraft" to stonecutter.current.version,
+            "id" to jsonStringContent(modId),
+            "name" to jsonStringContent(project.property("mod.name")),
+            "version" to jsonStringContent(project.version),
+            "description" to jsonStringContent(project.property("mod.description")),
+            "author" to jsonStringContent(project.property("mod.author")),
+            "license" to jsonStringContent(project.property("mod.license")),
+            "homepage" to jsonStringContent(project.property("mod.homepage")),
+            "sources" to jsonStringContent(project.property("mod.sources")),
+            "issues" to jsonStringContent(project.property("mod.issues")),
+            "entrypoint" to jsonStringContent(project.property("mod.entrypoint")),
+            "icon" to jsonStringContent("assets/$modId/icon.png"),
+            "mixins" to jsonStringContent("$modId.mixins.json"),
+            "fabricApi" to jsonStringContent(">=${project.property("deps.fabric_api")}"),
+            "fabricLoader" to jsonStringContent(">=${project.property("deps.fabric_loader")}"),
+            "fabricKotlin" to jsonStringContent(">=${project.property("deps.fabric_kotlin")}"),
+            "minecraft" to jsonStringContent(stonecutter.current.version),
         )
 
         inputs.properties(values)
-        filesMatching("fabric.mod.json") {
-            expand(values)
-        }
-    }
-
-    jar {
-        from(rootProject.file("LICENSE.md"))
+        filesMatching("fabric.mod.json") { expand(values) { escapeBackslash = true } }
     }
 }
 
+tasks.withType<Jar>().configureEach {
+    from(rootProject.files("NOTICE", "LICENSE.md", "GPL-3.0.txt"))
+}
+
 java {
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = JavaVersion.toVersion(javaVersion)
+    targetCompatibility = JavaVersion.toVersion(javaVersion)
     withSourcesJar()
 }
 
 kotlin {
     compilerOptions {
-        jvmTarget.set(JvmTarget.JVM_21)
+        jvmTarget.set(JvmTarget.fromTarget(javaVersion.toString()))
     }
 }
 
@@ -130,6 +138,7 @@ publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
+            artifactId = modId
         }
     }
 
@@ -146,7 +155,7 @@ detekt {
 }
 
 tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
-    jvmTarget = JavaVersion.VERSION_21.toString()
+    jvmTarget = javaVersion.toString()
 }
 
 gitHooks {

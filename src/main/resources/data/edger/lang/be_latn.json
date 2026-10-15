@@ -1,0 +1,78 @@
+{
+    "text.edger.header.search.pos": "--- Pošuk žurnalaŭ na %s ---",
+    "text.edger.header.search": "------ Pošuk žurnalaŭ ------",
+    "text.edger.header.status": "------ Edger ------",
+
+    "text.edger.footer.search": "------- %s [Staronka %s z %s] %s -------",
+    "text.edger.footer.page_forward": ">>",
+    "text.edger.footer.page_forward.hover": "Nastupnaja staronka",
+    "text.edger.footer.page_backward": "<<",
+    "text.edger.footer.page_backward.hover": "Minulaja staronka",
+
+    "text.edger.status.queue": "Čerha bazy dadzienych: %s",
+    "text.edger.status.queue.busy": "Zaniata",
+    "text.edger.status.queue.empty": "Pusta",
+    "text.edger.status.version": "Viersija: %s",
+    "text.edger.status.discord": "Discord: %s",
+    "text.edger.status.discord.join": "Nacisnicie, kab dalučycca",
+    "text.edger.status.db_type": "Typ bazy dadzienych: %s",
+    "text.edger.status.wiki": "Kiraŭnictva: %s",
+    "text.edger.status.wiki.view": "Nacisnicie dlia prahliadu",
+
+    "text.edger.preview.start": "Pačatak papiaredniaha prahliadu",
+
+    "text.edger.action_message": "%1$s %2$s %3$s %4$s %5$s",
+    "text.edger.action_message.time_diff": "%s tamu",
+    "text.edger.action_message.location.hover": "Nacisnicie, kab teliepartavacca",
+    "text.edger.action_message.with": "z",
+
+    "text.edger.rollback.start": "Adkat %s dziejanniaŭ",
+    "text.edger.rollback.finish": "Adkat zavieršany",
+    "text.edger.rollback.fail": "Nie ŭdalosia adkacić %s x%s",
+
+    "text.edger.restore.start": "Adnaŭliennie %s dziejanniaŭ",
+    "text.edger.restore.finish": "Adnaŭliennie zavieršana",
+    "text.edger.restore.fail": "Nie ŭdalosia adnavić %s x%s",
+
+    "text.edger.inspect.toggle": "Režym ahliadu: %s",
+    "text.edger.inspect.on": "Ukliučany",
+    "text.edger.inspect.off": "Vykliučany",
+
+    "text.edger.database.busy": "Bazy dadzienych zaraz zaniata. Heta moža zaniać niekatory čas",
+
+    "error.edger.no_cached_params": "Niama kešavanaha pošuku. Pasprabujcie spačatku pašukać",
+    "error.edger.command.no_results": "Niama rezuĺtataŭ dlia hetaha pošuku",
+    "error.edger.no_more_pages": "Boĺš niama staronak",
+    "error.edger.unknown_param": "Nieviadomy paramietr %s",
+    "error.edger.no_preview": "Niama ciakučaha papiaredniaha prahliadu",
+    "error.edger.unspecific.range": "Kali laska, ukažycie dyjapazon.",
+    "error.edger.unspecific.range_to_big": "Maksimaĺny dyjapazon skladaje %s.",
+    "error.edger.unspecific.source_or_time": "Kali laska, ukažycie krynicu abo čas (paslia).",
+
+    "text.edger.action.block-place": "pastaviŭ",
+    "text.edger.action.block-break": "zlamaŭ",
+    "text.edger.action.block-change": "zmianiŭ",
+    "text.edger.action.item-insert": "paklaŭ",
+    "text.edger.action.item-remove": "uziaŭ",
+    "text.edger.action.item-pick-up": "padabraŭ",
+    "text.edger.action.item-drop": "skinuŭ",
+    "text.edger.action.entity-kill": "zabiŭ",
+    "text.edger.action.entity-change": "zmianiŭ",
+
+    "text.edger.parameter.action.description": "Fiĺtravać pa typu vykananaha dziejannia.",
+    "text.edger.parameter.after.description": "Fiĺtravać pa časie (paslia vyznačanaha času).",
+    "text.edger.parameter.before.description": "Fiĺtravać pa časie (da vyznačanaha času). Zvyčajna varta vykarystoŭvać paslia.",
+    "text.edger.parameter.object.description": "Fiĺtravać pa abjektach. Heta moža być blok, pradmiet abo sutnasć.",
+    "text.edger.parameter.range.description": "Fiĺtravać pa miescaznachodžannie (kvadratny radyus vakol vašaha miescaznachodžannia).",
+    "text.edger.parameter.rolledback.description": "Fiĺtravać pa adkačanym stanie.",
+    "text.edger.parameter.source.description": "Fiĺtravać pa krynicy (imia huĺca abo krynica z ’@’).",
+    "text.edger.parameter.world.description": "Fiĺtravać pa ŭkazanym sviecie.",
+
+    "text.edger.network.protocols_mismatched": "Niesumiaščaĺnasć viersii pratakola: viersija pratakola moda Ledger %d, a viersija klijenta %d",
+    "text.edger.network.no_mod_info": "Niemahčyma vyznačyć infarmacyju pra mod dlia vašaha klijenta",
+
+    "text.edger.purge.starting": "------ Pačatak čystki ------",
+    "text.edger.purge.complete": "------ Čystka zavieršana ------",
+
+    "text.edger.player.result": "%1$s: Upieršyniu dalučyŭsia %2$s. Apošni raz dalučyŭsia: %3$s"
+}

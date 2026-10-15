@@ -1,0 +1,54 @@
+{
+  "text.edger.header.search.pos": "--- 位于 %s 的记录---",
+  "text.edger.header.search": "------ 记录搜索 ------",
+  "text.edger.header.status": "------ Edger ------",
+
+  "text.edger.footer.search": "------- %s [第 %s 页 共 %s 页] %s -------",
+  "text.edger.footer.page_forward": ">>",
+  "text.edger.footer.page_forward.hover": "下一页",
+  "text.edger.footer.page_backward": "<<",
+  "text.edger.footer.page_backward.hover": "上一页",
+
+  "text.edger.status.queue": "数据库队列状态: %s ",
+  "text.edger.status.queue.busy": "繁忙",
+  "text.edger.status.queue.empty": "闲置",
+  "text.edger.status.version": "版本: %s",
+  "text.edger.status.discord": "单击以加入 Ledger  discord 服务器",
+  "text.edger.status.discord.join": "单击以加入",
+  "text.edger.status.wiki": "Wiki: %s",
+  "text.edger.status.wiki.view": "单击跳转WIKI",
+
+  "text.edger.preview.start": "功能预览",
+
+  "text.edger.action_message": "%1$s %2$s %3$s %4$s %5$s",
+  "text.edger.action_message.time_diff": "%s ago",
+  "text.edger.action_message.location.hover": "单击传送至此",
+
+  "text.edger.rollback.start": "正在回滚，共 %s 次更改",
+  "text.edger.rollback.finish": "完成了指定规则内的回滚",
+  "text.edger.rollback.fail": "回滚失败 %s x%s",
+
+  "text.edger.restore.start": "正在还原 %s 次回档更改",
+  "text.edger.restore.finish": "完成了指定规则内的还原",
+  "text.edger.restore.fail": "还原失败 %s x%s",
+
+  "text.edger.inspect.toggle": "查询模式: %s",
+  "text.edger.inspect.on": "开启",
+  "text.edger.inspect.off": "关闭",
+
+  "text.edger.database.busy": "数据库任务繁忙. 这可能需要一点时间",
+
+  "error.edger.no_cached_params": "没有缓存搜索. 尝试先执行搜索",
+  "error.edger.command.no_results": "没有查询到任何结果",
+  "error.edger.no_more_pages": "没有更多页了",
+  "error.edger.unknown_param": "非法参数--> %s",
+  "error.edger.no_preview": "没有可预览的结果,预览失败",
+
+  "text.edger.action.block-place": "放置",
+  "text.edger.action.block-break": "破坏",
+  "text.edger.action.item-insert": "放入",
+  "text.edger.action.item-remove": "拿取",
+  "text.edger.action.entity-kill": "杀死",
+
+  "text.edger.network.protocols_mismatched": "协议版本不匹配: 客户端协议版本 %d 服务端版本为 %d"
+}

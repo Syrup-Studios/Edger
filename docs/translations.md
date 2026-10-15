@@ -10,4 +10,4 @@ The language used is based on the clients selected language and defaults to `en_
 - `de_de`
 
 ### Contributing
-You can contribute support for a new language or improve an old one by submitting a pull request to the [data/ledger/lang](https://github.com/QuiltServerTools/Ledger/tree/master/src/main/resources/data/ledger/lang) folder.
+You can contribute support for a new language or improve an old one by submitting a pull request to the [data/edger/lang](../src/main/resources/data/edger/lang) folder.

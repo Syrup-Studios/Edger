@@ -1,0 +1,9 @@
+Edger is a modified fork of Ledger.
+
+Original work by Potatoboy9999, QuiltServerTools, and Ledger contributors.
+Syrup Studios modified the fork on 2026-10-15. Changes include the Edger name
+and the net.syrupstudios.edger package.
+
+Edger uses the `edger` mod ID. The original authors and copyright
+notices remain in place. The project is licensed under LGPL-3.0. Copies of
+the LGPL-3.0 and GPL-3.0 license texts accompany the source and binary jars.

@@ -3,32 +3,30 @@
     "id": "${id}",
     "version": "${version}",
     "name": "${name}",
-    "description": "Logs world events and allows for them to be rolled back",
-    "authors": [
-        "Potatoboy9999"
-    ],
+    "description": "${description}",
+    "authors": ["${author}"],
     "contact": {
-        "homepage": "https://quiltservertools.github.io/Ledger/latest/",
-        "sources": "https://github.com/QuiltServerTools/Ledger",
-        "issues": "https://github.com/QuiltServerTools/Ledger/issues"
+        "homepage": "${homepage}",
+        "sources": "${sources}",
+        "issues": "${issues}"
     },
-    "license": "LGPL",
-    "icon": "assets/ledger/icon.png",
+    "license": "${license}",
+    "icon": "${icon}",
     "environment": "server",
     "entrypoints": {
         "server": [
             {
-                "value": "com.github.quiltservertools.ledger.Ledger::INSTANCE"
+                "value": "${entrypoint}"
             }
         ]
     },
     "mixins": [
-        "ledger.mixins.json"
+        "${mixins}"
     ],
     "depends": {
-        "fabricloader": ">=${fabricLoader}",
-        "fabric": ">=${fabricApi}",
-        "fabric-language-kotlin": ">=${fabricKotlin}",
+        "fabricloader": "${fabricLoader}",
+        "fabric": "${fabricApi}",
+        "fabric-language-kotlin": "${fabricKotlin}",
         "minecraft": "${minecraft}"
     },
     "breaks": {

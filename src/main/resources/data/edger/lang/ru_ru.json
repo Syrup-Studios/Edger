@@ -1,0 +1,58 @@
+{
+  "text.edger.header.search.pos": "--- Поиск журналов на %s ---",
+  "text.edger.header.search": "------ Поиск журналов ------",
+  "text.edger.header.status": "------ Edger ------",
+
+  "text.edger.footer.search": "------- %s [Страница %s из %s] %s -------",
+  "text.edger.footer.page_forward": ">>",
+  "text.edger.footer.page_forward.hover": "Следующая страница",
+  "text.edger.footer.page_backward": "<<",
+  "text.edger.footer.page_backward.hover": "Предыдущая страница",
+
+  "text.edger.status.queue": "Очередь базы данных: %s",
+  "text.edger.status.queue.busy": "Занято",
+  "text.edger.status.queue.empty": "Пусто",
+  "text.edger.status.version": "Версия: %s",
+  "text.edger.status.discord": "Discord: %s",
+  "text.edger.status.discord.join": "Нажмите, чтобы присоединиться",
+  "text.edger.status.wiki": "Wiki: %s",
+  "text.edger.status.wiki.view": "Нажмите, чтобы просмотреть",
+
+  "text.edger.preview.start": "Предварительный просмотр начинается",
+
+  "text.edger.action_message": "%1$s %2$s %3$s %4$s %5$s",
+  "text.edger.action_message.time_diff": "%s назад",
+  "text.edger.action_message.location.hover": "Нажмите, чтобы телепортироваться",
+  "text.edger.action_message.with": "с помощью",
+
+  "text.edger.rollback.start": "Откат %s действий(я)",
+  "text.edger.rollback.finish": "Откат завершен",
+  "text.edger.rollback.fail": "Не удалось откатить %s x%s",
+
+  "text.edger.restore.start": "Восстановление %s действий(я)",
+  "text.edger.restore.finish": "Восстановление завершено",
+  "text.edger.restore.fail": "Не удалось восстановить %s x%s",
+
+  "text.edger.inspect.toggle": "Режим проверки: %s",
+  "text.edger.inspect.on": "Включен",
+  "text.edger.inspect.off": "Отключен",
+
+  "text.edger.database.busy": "База данных в настоящее время занята. Это может занять некоторое время",
+
+  "error.edger.no_cached_params": "Нет кешированного поиска. Попробуйте сначала выполнить поиск",
+  "error.edger.command.no_results": "Нет результатов для этого поиска",
+  "error.edger.no_more_pages": "Больше нет страниц",
+  "error.edger.unknown_param": "Неизвестный параметр %s",
+  "error.edger.no_preview": "Нет текущего предварительного просмотра",
+
+  "text.edger.action.block-place": "разместил",
+  "text.edger.action.block-break": "сломал",
+  "text.edger.action.item-insert": "добавил",
+  "text.edger.action.item-remove": "удалил",
+  "text.edger.action.item-pick-up": "подобрал",
+  "text.edger.action.item-drop": "выкинул",
+  "text.edger.action.entity-kill": "убил",
+  "text.edger.action.entity-change": "изменил",
+
+  "text.edger.network.protocols_mismatched": "Несоответствие версий протокола: клиентский мод - это версия протокола Ledger %d, а версия клиента - %d"
+}

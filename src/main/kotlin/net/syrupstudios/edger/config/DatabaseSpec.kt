@@ -1,0 +1,28 @@
+package net.syrupstudios.edger.config
+
+import net.syrupstudios.edger.Ledger
+import com.uchuhimo.konf.Config
+import com.uchuhimo.konf.ConfigSpec
+import net.minecraft.world.level.storage.LevelResource
+import java.nio.file.Path
+
+@Suppress("MagicNumber")
+object DatabaseSpec : ConfigSpec() {
+    val queueTimeoutMin by required<Long>()
+    val queueCheckDelaySec by required<Long>()
+    val autoPurgeDays by required<Int>()
+    val batchSize by optional<Int>(1000)
+    val batchDelay by optional<Int>(10)
+    val logSQL by optional<Boolean>(false)
+    val location by optional<String?>(null)
+    val updateSchema by optional<Boolean>(false)
+}
+
+fun Config.getDatabasePath(): Path {
+    val location = config[DatabaseSpec.location]
+    return if (location != null) {
+        Path.of(location)
+    } else {
+        Ledger.server.getWorldPath(LevelResource.ROOT)
+    }
+}

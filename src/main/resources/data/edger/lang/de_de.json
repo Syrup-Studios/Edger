@@ -1,0 +1,59 @@
+{
+    "text.edger.header.search.pos": "--- Suche Einträge bei %s ---",
+    "text.edger.header.search": "------ Suche Einträge ------",
+    "text.edger.header.status": "------ Edger ------",
+    "text.edger.footer.search": "------- %s [Seite %s von %s] %s -------",
+
+    "text.edger.footer.page_forward": ">>",
+    "text.edger.footer.page_forward.hover": "Nächste Seite",
+    "text.edger.footer.page_backward": "<<",
+    "text.edger.footer.page_backward.hover": "Vorherige Seite",
+
+    "text.edger.status.queue": "Datenbank Warteschlange: %s",
+    "text.edger.status.queue.busy": "Beschäftigt",
+    "text.edger.status.queue.empty": "Leer",
+    "text.edger.status.version": "Version: %s",
+    "text.edger.status.discord": "Discord: %s",
+    "text.edger.status.discord.join": "Zum Beitreten klicken",
+    "text.edger.status.db_type": "Datenbank Typ: %s",
+    "text.edger.status.wiki": "Wiki: %s",
+    "text.edger.status.wiki.view": "Zum Öffnen klicken",
+
+    "text.edger.preview.start": "Vorschau startet",
+
+    "text.edger.action_message": "%1$s %2$s %3$s %4$s %5$s",
+    "text.edger.action_message.time_diff": "Vor %s",
+    "text.edger.action_message.location.hover": "Zum Teleportieren klicken",
+
+    "text.edger.rollback.start": "Setzt %s Aktionen zurück",
+    "text.edger.rollback.finish": "Zurücksetzen vollständig",
+    "text.edger.rollback.fail": "Fehler beim Zurücksetzen von %s x%s",
+
+    "text.edger.restore.start": "Stellt %s Aktionen wiederher",
+    "text.edger.restore.finish": "Wiederherstellen vollständig",
+    "text.edger.restore.fail": "Fehler beim Wiederherstellen von %s x%s",
+
+    "text.edger.inspect.toggle": "Untersuchungsmodus: %s",
+    "text.edger.inspect.on": "Aktiviert",
+    "text.edger.inspect.off": "Deaktiviert",
+
+    "text.edger.database.busy": "Die Datenbank ist gerade beschäftigt. Das kann einen Moment dauern",
+
+    "error.edger.no_cached_params": "Keine Suche gefunden. Führe zuerst eine Suche durch",
+    "error.edger.command.no_results": "Keine Einträge für diese Suche",
+    "error.edger.no_more_pages": "Keine weiteren Seiten",
+    "error.edger.unknown_param": "Unbekannte Angaben %s",
+    "error.edger.no_preview": "Keine laufende Vorschau",
+
+    "text.edger.action.block-place": "platziert",
+    "text.edger.action.block-break": "zerstört",
+    "text.edger.action.item-insert": "hinzugefügt",
+    "text.edger.action.item-remove": "entfernt",
+    "text.edger.action.entity-kill": "getötet",
+
+    "text.edger.network.protocols_mismatched": "Keine passende Protokoll-Version: Client-Mod ist Ledger Protokoll-Version %d und die Client Version ist %d",
+    "text.edger.network.no_mod_info": "Es konnte keine Modinformation für deine Client-Mod gefunden werden",
+
+    "text.edger.purge.starting": "------ Startet Säuberung ------",
+    "text.edger.purge.complete": "------ Säuberung vollständig ------"
+}

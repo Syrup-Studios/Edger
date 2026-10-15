@@ -1,0 +1,78 @@
+{
+    "text.edger.header.search.pos": "--- Пошук журналів на %s ---",
+    "text.edger.header.search": "------ Пошук журналів ------",
+    "text.edger.header.status": "------ Edger ------",
+
+    "text.edger.footer.search": "------- %s [Сторінка %s з %s] %s -------",
+    "text.edger.footer.page_forward": ">>",
+    "text.edger.footer.page_forward.hover": "Наступна сторінка",
+    "text.edger.footer.page_backward": "<<",
+    "text.edger.footer.page_backward.hover": "Минула сторінка",
+
+    "text.edger.status.queue": "Черга бази даних: %s",
+    "text.edger.status.queue.busy": "Зайнято",
+    "text.edger.status.queue.empty": "Порожньо",
+    "text.edger.status.version": "Версія: %s",
+    "text.edger.status.discord": "Discord: %s",
+    "text.edger.status.discord.join": "Натисніть, щоб приєднатися",
+    "text.edger.status.db_type": "Тип бази даних: %s",
+    "text.edger.status.wiki": "Керівництво: %s",
+    "text.edger.status.wiki.view": "Натисніть, щоб переглянути",
+
+    "text.edger.preview.start": "Початок попереднього перегляду",
+
+    "text.edger.action_message": "%1$s %2$s %3$s %4$s %5$s",
+    "text.edger.action_message.time_diff": "%s тому",
+    "text.edger.action_message.location.hover": "Натисніть, щоб телепортуватися",
+    "text.edger.action_message.with": "з",
+
+    "text.edger.rollback.start": "Відкат %s дій",
+    "text.edger.rollback.finish": "Відкат завершено",
+    "text.edger.rollback.fail": "Не вдалося відкотити %s x%s",
+
+    "text.edger.restore.start": "Відновлення %s дій",
+    "text.edger.restore.finish": "Відновлення завершено",
+    "text.edger.restore.fail": "Не вдалося відновити %s x%s",
+
+    "text.edger.inspect.toggle": "Режим огляду: %s",
+    "text.edger.inspect.on": "Увімкнено",
+    "text.edger.inspect.off": "Вимкнено",
+
+    "text.edger.database.busy": "База даних зараз зайнята. Це може зайняти деякий час",
+
+    "error.edger.no_cached_params": "Немає кешованого пошуку. Спробуйте спочатку виконати пошук",
+    "error.edger.command.no_results": "Немає результатів для цього пошуку",
+    "error.edger.no_more_pages": "Більше немає сторінок",
+    "error.edger.unknown_param": "Невідомий параметр %s",
+    "error.edger.no_preview": "Немає поточного попереднього перегляду",
+    "error.edger.unspecific.range": "Будь ласка, вкажіть діапазон.",
+    "error.edger.unspecific.range_to_big": "Максимальний діапазон становить %s.",
+    "error.edger.unspecific.source_or_time": "Будь ласка, вкажіть джерело або час (після).",
+
+    "text.edger.action.block-place": "розмістив",
+    "text.edger.action.block-break": "зламав",
+    "text.edger.action.block-change": "змінив",
+    "text.edger.action.item-insert": "поклав",
+    "text.edger.action.item-remove": "взяв",
+    "text.edger.action.item-pick-up": "підібрав",
+    "text.edger.action.item-drop": "скинув",
+    "text.edger.action.entity-kill": "вбив",
+    "text.edger.action.entity-change": "змінив",
+
+    "text.edger.parameter.action.description": "Фільтрувати за типом виконаної дії.",
+    "text.edger.parameter.after.description": "Фільтрувати за часом (після вказаного часу).",
+    "text.edger.parameter.before.description": "Фільтрувати за часом (до вказаного часу). Зазвичай слід використовувати після.",
+    "text.edger.parameter.object.description": "Фільтрувати за об'єктом. Це може бути блок, предмет або сутність.",
+    "text.edger.parameter.range.description": "Фільтрувати за локацією (квадратний радіус навколо вашого місця розташування).",
+    "text.edger.parameter.rolledback.description": "Фільтрувати за відкоченим станом.",
+    "text.edger.parameter.source.description": "Фільтрувати за джерелом (ім'я гравця або джерело з '@').",
+    "text.edger.parameter.world.description": "Фільтрувати за вказаним виміром.",
+
+    "text.edger.network.protocols_mismatched": "Несумісність версій протоколу: версія протоколу моду Ledger %d, а версія клієнта %d",
+    "text.edger.network.no_mod_info": "Неможливо визначити інформацію про мод для вашого клієнтського моду",
+
+    "text.edger.purge.starting": "------ Початок очищення ------",
+    "text.edger.purge.complete": "------ Очищення завершено ------",
+
+    "text.edger.player.result": "%1$s: Вперше приєднався %2$s. Востаннє приєднався: %3$s"
+}

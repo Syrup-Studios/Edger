@@ -1,0 +1,66 @@
+{
+    "text.edger.header.search.pos": "--- Buscando registros en %s ---",
+    "text.edger.header.search": "------ Buscando registros ------",
+    "text.edger.header.status": "------ Edger ------",
+
+    "text.edger.footer.search": "------- %s [Página %s de %s] %s -------",
+    "text.edger.footer.page_forward": ">>",
+    "text.edger.footer.page_forward.hover": "Página siguiente",
+    "text.edger.footer.page_backward": "<<",
+    "text.edger.footer.page_backward.hover": "Página anterior",
+
+    "text.edger.status.queue": "Cola de Base de Datos: %s",
+    "text.edger.status.queue.busy": "Ocupada",
+    "text.edger.status.queue.empty": "Vacía",
+    "text.edger.status.version": "Versión: %s",
+    "text.edger.status.discord": "Discord: %s",
+    "text.edger.status.discord.join": "Clic para unirse",
+    "text.edger.status.db_type": "Tipo de Base de Datos: %s",
+    "text.edger.status.wiki": "Wiki: %s",
+    "text.edger.status.wiki.view": "Clic para ver",
+
+    "text.edger.preview.start": "Iniciando vista previa",
+
+    "text.edger.action_message": "%1$s %2$s %3$s %4$s %5$s",
+    "text.edger.action_message.time_diff": "hace %s",
+    "text.edger.action_message.location.hover": "Clic para teletransportarse",
+    "text.edger.action_message.with": "with",
+
+    "text.edger.rollback.start": "Retrocediendo %s acciones",
+    "text.edger.rollback.finish": "Retroceso completo",
+    "text.edger.rollback.fail": "Fallo al retroceder %s x%s",
+
+    "text.edger.restore.start": "Restaurando %s acciones",
+    "text.edger.restore.finish": "Restauración completa",
+    "text.edger.restore.fail": "Fallo al restaurar %s x%s",
+
+    "text.edger.inspect.toggle": "Modo de inspección: %s",
+    "text.edger.inspect.on": "Activado",
+    "text.edger.inspect.off": "Desactivado",
+
+    "text.edger.database.busy": "La base de datos está actualmente ocupada, esto puede tomar un momento.",
+
+    "error.edger.no_cached_params": "Sin búsqueda en caché, realice una búsqueda antes de continuar.",
+    "error.edger.command.no_results": "Sin resultados de búsqueda",
+    "error.edger.no_more_pages": "No más páginas",
+    "error.edger.unknown_param": "Parámetro desconocido %s",
+    "error.edger.no_preview": "Sin vista previa",
+
+    "text.edger.action.block-place": "colocado",
+    "text.edger.action.block-break": "roto",
+    "text.edger.action.block-change": "cambiado",
+    "text.edger.action.item-insert": "añadido",
+    "text.edger.action.item-remove": "quitado",
+    "text.edger.action.item-pick-up": "recogido",
+    "text.edger.action.item-drop": "dropeado",
+    "text.edger.action.entity-kill": "matado",
+    "text.edger.action.entity-change": "cambiado",
+
+    "text.edger.network.protocols_mismatched": "Las versiones del protocolo no coinciden: la versión del Ledger es %d y la versión del cliente es %d",
+    "text.edger.network.no_mod_info": "No se pudo identificar la información del mod de cliente.",
+
+    "text.edger.purge.starting": "------ Iniciando purga ------",
+    "text.edger.purge.complete": "------ Purga completada ------",
+
+    "text.edger.player.result": "%1$s: Primera conexión: %2$s. Última conexión: %3$s"
+}

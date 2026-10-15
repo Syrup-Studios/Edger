@@ -13,7 +13,7 @@ The docs shown here have Kotlin code, but you can write your extension in Java s
 3. Add the following to your `build.gradle`:
 
 ```groovy
-modImplementation(include("com.github.quiltservertools:ledger:LATEST_LEDGER_VERSION"))
+modImplementation(include("net.syrupstudios:edger:LATEST_EDGER_VERSION"))
 ```
 
 ## Creating your extension

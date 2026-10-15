@@ -1,0 +1,65 @@
+{
+    "text.edger.header.search.pos": "--- Searching logs at %s ---",
+    "text.edger.header.search": "------ Searching logs ------",
+    "text.edger.header.status": "------ Edger ------",
+    "text.edger.footer.search": "------- %s [Page %s of %s] %s -------",
+
+    "text.edger.footer.page_forward": ">>",
+    "text.edger.footer.page_forward.hover": "Next Page",
+    "text.edger.footer.page_backward": "<<",
+    "text.edger.footer.page_backward.hover": "Previous Page",
+
+    "text.edger.status.queue": "Database Queue: %s",
+    "text.edger.status.queue.busy": "Busy",
+    "text.edger.status.queue.empty": "Empty",
+    "text.edger.status.version": "Version: %s",
+    "text.edger.status.discord": "Discord: %s",
+    "text.edger.status.discord.join": "Click to Join",
+    "text.edger.status.db_type": "Database type: %s",
+    "text.edger.status.wiki": "Wiki: %s",
+    "text.edger.status.wiki.view": "Click to View",
+
+    "text.edger.preview.start": "Preview starting",
+
+    "text.edger.action_message": "%1$s %2$s %3$s %4$s %5$s",
+    "text.edger.action_message.time_diff": "%s ago",
+    "text.edger.action_message.location.hover": "Click to teleport",
+    "text.edger.action_message.with": "with",
+
+    "text.edger.rollback.start": "Rolling back %s actions",
+    "text.edger.rollback.finish": "Rollback complete",
+    "text.edger.rollback.fail": "Failed to rollback %s x%s",
+
+    "text.edger.restore.start": "Restoring %s actions",
+    "text.edger.restore.finish": "Restore complete",
+    "text.edger.restore.fail": "Failed to restore %s x%s",
+
+    "text.edger.inspect.toggle": "Inspect mode: %s",
+    "text.edger.inspect.on": "Enabled",
+    "text.edger.inspect.off": "Disabled",
+
+    "text.edger.database.busy": "Database is currently busy. This may take a moment",
+
+    "error.edger.no_cached_params": "No cached search. Try preforming a search first",
+    "error.edger.command.no_results": "No results for that search",
+    "error.edger.no_more_pages": "No more pages",
+    "error.edger.unknown_param": "Unknown parameter %s",
+    "error.edger.no_preview": "No current preview",
+
+    "text.edger.action.block-place": "placed",
+    "text.edger.action.block-break": "broke",
+    "text.edger.action.item-insert": "added",
+    "text.edger.action.item-remove": "removed",
+    "text.edger.action.item-pick-up": "picked up",
+    "text.edger.action.item-drop": "dropped",
+    "text.edger.action.entity-kill": "killed",
+    "text.edger.action.entity-change": "changed",
+    "text.edger.action.entity-mount": "mounted",
+    "text.edger.action.entity-dismount": "dismounted",
+
+    "text.edger.network.protocols_mismatched": "Protocol versions mismatched: client mod is Ledger protocol version %d and the client version is %d",
+    "text.edger.network.no_mod_info": "Unable to determine mod information for your client mod",
+
+    "text.edger.purge.starting": "------ Starting purge ------",
+    "text.edger.purge.complete": "------ Completed purge ------"
+}

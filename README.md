@@ -1,30 +1,30 @@
-[![discord](https://img.shields.io/discord/764543203772334100?label=discord)](https://discord.gg/UxHnDWr)
+[![upstream Ledger Discord](https://img.shields.io/discord/764543203772334100?label=upstream%20Ledger%20Discord)](https://discord.gg/UxHnDWr)
 
-For a much better guide, visit our [wiki](https://quiltservertools.github.io/Ledger/latest/)
+For the original Ledger guide, visit the [upstream wiki](https://quiltservertools.github.io/Ledger/latest/).
 
-## Ledger
+## Edger
 
 A world change logging tool for the Fabric modloader.
 
-Ledger can be found on Discord at https://discord.gg/GtwDTTr3pe
+The [upstream Ledger community](https://discord.gg/GtwDTTr3pe) is on Discord.
 
 ### Build
 
-Use JDK 21 to assemble the Stonecutter Fabric 1.20.1 target with `./gradlew :1.20.1-fabric:assemble`. Find the jar in `versions/1.20.1-fabric/build/libs`. Target dependency versions are in `stonecutter.properties.yaml`.
+Use the Java version set by `java.version` in `stonecutter.properties.yaml` to assemble the Stonecutter Fabric target with `./gradlew :1.20.1-fabric:assemble`. Set the Minecraft target with `minecraft.version`. Find the jar in `versions/1.20.1-fabric/build/libs`. Mod metadata, plugin versions, and dependency versions are also in that file.
 
 ### Install
 
-Put Ledger in your mods folder along with Fabric API and fabric-language-kotlin. When you launch your server, the config file will be created automatically.
+Put Edger in your mods folder along with Fabric API and fabric-language-kotlin. When you launch your server, the config file will be created automatically.
 
 ### Configuration
 
-Ledger's configuration file is found at `config/ledger.toml`.
+Edger's configuration file is found at `config/ledger.toml`.
 
 #### Message theme
 
 Found under `[color]`
 
-Ledger allows for the customisation of the colors used in the messages sent in game. By default, Ledger uses the blue theme. More themes can be found in the [themes](./themes.md) file
+Edger allows for the customisation of the colors used in messages sent in game. By default, Edger uses the blue theme. More themes can be found in the [themes](./themes.md) file.
 
 #### Search settings
 
@@ -86,12 +86,16 @@ When viewing results, you can use this command to quickly skip to a certain page
 
 ### Permissions
 
-All Ledger commands support the LuckPerms API
+All Edger commands support the LuckPerms API.
 
 The permission nodes are formatted as: `ledger.<command>`
 
-All Ledger commands have fallback on permission level 3 should you not wish to have a permissions mod installed.
+All Edger commands have fallback on permission level 3 if you do not have a permissions mod installed.
 
 ### Contribute
 
-Ledger is written in Kotlin, and therefore all contributions should be in Kotlin where possible. The exceptions to this are mixins, which must be written in Java.
+Edger is written in Kotlin. Write contributions in Kotlin where possible. Mixins must be written in Java.
+
+### Fork and license
+
+Edger is a modified fork of Ledger by Potatoboy9999, QuiltServerTools, and its contributors. Syrup Studios modified it on 2026-10-15 to use the Edger name and the `net.syrupstudios.edger` package. Edger uses the `edger` mod ID. See [NOTICE](NOTICE) for attribution and modification details, and [LICENSE.md](LICENSE.md) for the LGPL-3.0 license.

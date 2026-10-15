@@ -1,0 +1,22 @@
+package net.syrupstudios.edger.config
+
+import net.syrupstudios.edger.config.util.ResourceLocationMixin
+import com.uchuhimo.konf.Config
+import com.uchuhimo.konf.source.toml
+import net.fabricmc.loader.api.FabricLoader
+import net.minecraft.resources.ResourceLocation
+
+const val CONFIG_PATH = "ledger.toml"
+
+val config: Config = Config {
+    addSpec(DatabaseSpec)
+    addSpec(SearchSpec)
+    addSpec(ActionsSpec)
+    addSpec(ColorSpec)
+    addSpec(NetworkingSpec)
+}
+    .apply { this.mapper.addMixIn(ResourceLocation::class.java, ResourceLocationMixin::class.java) }
+    .from.toml.resource(CONFIG_PATH)
+    .from.toml.watchFile(FabricLoader.getInstance().configDir.resolve("ledger.toml").toFile())
+    .from.env()
+    .from.systemProperties()

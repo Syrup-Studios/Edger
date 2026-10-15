@@ -24,7 +24,7 @@ Once one of the c2s packets have been received, the server will send a response 
 
 Inspects a block at a given position, using the player's current dimension. This may be changed in the future
 
-Channel: `ledger:inspect`
+Channel: `edger:inspect`
 
 Buf content:
 
@@ -32,11 +32,11 @@ Position: `BlockPos`
 
 Number of pages: `int`
 
-Return packet type: `ledger.action`
+Return packet type: `edger.action`
 
 ### Search Packet
 
-Channel: `ledger:search`
+Channel: `edger:search`
 
 Buf content:
 
@@ -46,11 +46,11 @@ Pages: `int`
 
 String formatted in the same way as a `/lg search` command would be formatted
 
-Return packet type: `ledger.action`
+Return packet type: `edger.action`
 
 ### Handshake Packet
 
-Channel: `ledger:handshake`
+Channel: `edger:handshake`
 
 Buf content:
 
@@ -66,7 +66,7 @@ Mod NBT should contain the following:
 
 ### Purge Packet
 
-Channel: `ledger.purge`
+Channel: `edger.purge`
 
 Buf content:
 
@@ -74,7 +74,7 @@ Params: `String` - same string as used in the search command
 
 ### Rollback Packet
 
-Channel: `ledger.rollback`
+Channel: `edger.rollback`
 
 Buf content:
 
@@ -90,7 +90,7 @@ Params: `String` - same string as used in the search command
 
 Represents a logged action from the database
 
-Channel: `ledger:action`
+Channel: `edger:action`
 
 Buf content:
 
@@ -116,7 +116,7 @@ Additional NBT: `String`
 
 Sends information about Ledger to compatible clients
 
-Channel: `ledger:handshake`
+Channel: `edger:handshake`
 
 Buf content:
 
@@ -128,7 +128,7 @@ Mod allowed: `boolean`
 
 Registers the server receiving a Ledger packet and contains information about what the server is doing
 
-Channel: `ledger.response`
+Channel: `edger.response`
 
 ### Packet structure
 
